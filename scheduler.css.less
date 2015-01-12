@@ -1,0 +1,316 @@
+*{
+	
+	padding: 0px;
+	vertical-align: top;
+	// outline: 1px dotted green;
+}
+
+body{
+	margin: 0 auto;
+	/*width: 980px;*/
+	min-height: 500px;
+	
+	div.container-fluid{
+		max-width: 970px;
+	}
+
+	div.header{
+		height: 75px;
+		nav{
+			 ul {
+				margin-top: 20px;
+				text-align: center;
+				li {
+					display: inline;
+				}
+			}
+		}
+	}
+
+	div.aboutYou{
+		
+		label{
+			font-size: 1.2em;
+		}
+	}
+
+	div.meetingInformation{
+		
+
+		div.labels {
+			font-size: 1.3em;
+
+			label{
+				margin: 0px;
+				display: block;
+				height: 35px;
+				text-align: right;
+			}
+			label.inputCalendar{
+				height: 150px;
+			}
+			label.dateTime{
+				min-height: 150px;
+			}
+		}
+		div.inputs {
+			
+			input, a, select{
+				font-size: 1.3em;
+				display: block;
+				height: 35px;
+			}
+			input.inputDate{
+			}
+			div.dateTime{
+				min-height: 150px;
+				select{
+					width: 100%;
+				}
+				ul {
+					list-style-type: none;
+					li{
+						label{
+							width: 100%;
+							font-size: 1.7em;
+							input{
+								display: inline-block;
+							}
+
+						}
+					}
+				}
+				span{
+					height: 35px;
+				}
+			}
+			div.calendar{
+
+			}
+		}
+
+		div.actions {
+			margin-top: 15px;
+			text-align: center;
+			button {
+				width: 250px;
+				margin: 10px auto;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+		}
+	}
+	
+}
+
+#calendar{
+
+}
+
+
+/* Reset */
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th {
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-spacing: 0;
+}
+
+/* Calendar Wrapper */
+.ui-datepicker {
+	display: none;
+	width: 100%;
+	padding-top: 10px;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+
+	cursor: default;
+
+	text-transform: uppercase;
+	font-family: Tahoma;
+	font-size: 1em;
+
+	background: #141517;	
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	-webkit-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
+	-moz-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
+	box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
+}
+
+/* Calendar Header */
+.ui-datepicker-header {
+	position: relative;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #d6d6d6;
+}
+
+.ui-datepicker-title { text-align: center; }
+
+/* Month */
+.ui-datepicker-month {
+	position: relative;
+	padding-right: 15px;
+	color: #565656;
+}
+
+.ui-datepicker-month:before {
+	display: block;
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 5px;
+	height: 5px;
+	content: '';
+
+	background: #a5cd4e;
+	background: -moz-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a5cd4e), color-stop(100%,#6b8f1a));
+	background: -webkit-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+	background: -o-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+	background: -ms-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+	background: linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Year */
+.ui-datepicker-year {
+	padding-left: 8px;
+	color: #a8a8a8;
+}
+
+/* Prev Next Month */
+.ui-datepicker-prev,
+.ui-datepicker-next {
+	position: absolute;
+	top: -2px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.ui-datepicker-prev {
+	left: 0;
+	padding-left: 0;
+}
+
+.ui-datepicker-next {
+	right: 0;
+	padding-right: 0;
+}
+
+.ui-datepicker-prev span,
+.ui-datepicker-next span{
+	display: block;
+	width: 5px;
+	height: 10px;
+	text-indent: -9999px;
+
+	background-image: url(img/arrows.png);
+}
+
+.ui-datepicker-prev span { background-position: 0px 0px; }
+
+.ui-datepicker-next span { background-position: -5px 0px; }
+
+.ui-datepicker-prev-hover span { background-position: 0px -10px; }
+
+.ui-datepicker-next-hover span { background-position: -5px -10px; }
+
+/* Calendar "Days" */
+.ui-datepicker-calendar th {
+	// padding-top: 15px;
+	// padding-bottom: 10px;
+	
+	text-align: center;
+	font-weight: normal;
+	color: #a8a8a8;
+}
+
+.ui-datepicker-calendar td {
+	// padding: 0 7px;
+	padding: 12 14px;
+	text-align: center;
+	line-height: 26x;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+	display: block;
+	outline: none;
+
+	text-decoration: none;
+	color: #a8a8a8;
+	
+	border: 1px solid transparent;
+}
+
+/* Day Active State*/
+.ui-datepicker-calendar .ui-state-active {
+	color: #6a9113;
+	border-color: #6a9113;
+}
+
+/* Other Months Days*/
+.ui-datepicker-other-month .ui-state-default { color: #565656; }
+
+.ui-icon{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+table.ui-datepicker-calendar td{
+	margin: 5px;
+	padding: 10px;
+}
+
+.ui-datepicker-calendar{
+	padding: 0px;
+	margin: 0px;
+	font-size: 1em;
+}
+
+#calendar{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+   background:url(img/bg.png) repeat;
+   // width:960px;margin:0 auto
+   div{
+   		   border-radius: 10px;
+
+   }
+}
+#wrapper{
+   padding: 50px 0 0 325px;
+}
+#calendar{
+   // margin:25px auto; 
+   // width: 370px;
+   border-radius: 10px;
+}
+.spacingMeetingInfo{
+	margin-bottom: 10px;
+	// margin-top: 15px;
+	border-top: 1px solid black;
+}
+.presetMeetingInfo{
+	padding-bottom: 10px;
+}
+label.spacingMeetingInfo{
+	border-top: 1px solid red;
+	min-height: 42px;
+	font-size: 1.5em;
+	margin-top: 50px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

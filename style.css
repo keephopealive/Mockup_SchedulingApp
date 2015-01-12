@@ -1,0 +1,55 @@
+*{
+	outline: 1px solid red;
+}
+
+div.container{
+	margin: 0 auto;
+	width: 970px;
+	height: 1200px;
+}
+	div.header, div.body, footer{
+		width: 970px;
+	}
+	div.header{
+		height: 50px;
+	}
+		div.header-left, div.header-right{
+			
+			height: 100%;
+			display: inline-block;
+		}
+		div.header-left{
+			width: 59%;
+			background-color: red;
+		}
+		div.header-right{
+			width: 39%;
+			background-color: green;
+		}
+	nav{
+		width: 100%;
+		background-color: black;
+		height: 20px;
+	}
+	div.body{
+		width: 970px;
+		min-height: 500px;
+	}
+		div.body-left{
+			display: inline-block;
+			width: 695px;
+			height: 500px;
+			background-color: gray;
+		}
+		div.body-right{
+			display: inline-block;
+			width: 267px;
+			height: 500px;
+			background-color: purple;
+		}
+	footer{
+		height: 50px;
+		background-color: pink;
+	}
+
+

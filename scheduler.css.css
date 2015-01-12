@@ -1,0 +1,254 @@
+* {
+  padding: 0px;
+  vertical-align: top;
+}
+body {
+  margin: 0 auto;
+  /*width: 980px;*/
+
+  min-height: 500px;
+}
+body div.container-fluid {
+  max-width: 970px;
+}
+body div.header {
+  height: 75px;
+}
+body div.header nav ul {
+  margin-top: 20px;
+  text-align: center;
+}
+body div.header nav ul li {
+  display: inline;
+}
+body div.aboutYou label {
+  font-size: 1.2em;
+}
+body div.meetingInformation div.labels {
+  font-size: 1.3em;
+}
+body div.meetingInformation div.labels label {
+  margin: 0px;
+  display: block;
+  height: 35px;
+  text-align: right;
+}
+body div.meetingInformation div.labels label.inputCalendar {
+  height: 150px;
+}
+body div.meetingInformation div.labels label.dateTime {
+  min-height: 150px;
+}
+body div.meetingInformation div.inputs input,
+body div.meetingInformation div.inputs a,
+body div.meetingInformation div.inputs select {
+  font-size: 1.3em;
+  display: block;
+  height: 35px;
+}
+body div.meetingInformation div.inputs div.dateTime {
+  min-height: 150px;
+}
+body div.meetingInformation div.inputs div.dateTime select {
+  width: 100%;
+}
+body div.meetingInformation div.inputs div.dateTime ul {
+  list-style-type: none;
+}
+body div.meetingInformation div.inputs div.dateTime ul li label {
+  width: 100%;
+  font-size: 1.7em;
+}
+body div.meetingInformation div.inputs div.dateTime ul li label input {
+  display: inline-block;
+}
+body div.meetingInformation div.inputs div.dateTime span {
+  height: 35px;
+}
+body div.meetingInformation div.actions {
+  margin-top: 15px;
+  text-align: center;
+}
+body div.meetingInformation div.actions button {
+  width: 250px;
+  margin: 10px auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* Reset */
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-spacing: 0;
+}
+/* Calendar Wrapper */
+.ui-datepicker {
+  display: none;
+  width: 100%;
+  padding-top: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  cursor: default;
+  text-transform: uppercase;
+  font-family: Tahoma;
+  font-size: 1em;
+  background: #141517;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1), inset 0px 1px 1px #000000;
+  -moz-box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1), inset 0px 1px 1px #000000;
+  box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1), inset 0px 1px 1px #000000;
+}
+/* Calendar Header */
+.ui-datepicker-header {
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d6d6d6;
+}
+.ui-datepicker-title {
+  text-align: center;
+}
+/* Month */
+.ui-datepicker-month {
+  position: relative;
+  padding-right: 15px;
+  color: #565656;
+}
+.ui-datepicker-month:before {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  content: '';
+  background: #a5cd4e;
+  background: -moz-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5cd4e), color-stop(100%, #6b8f1a));
+  background: -webkit-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+  background: -o-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+  background: -ms-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+  background: linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* Year */
+.ui-datepicker-year {
+  padding-left: 8px;
+  color: #a8a8a8;
+}
+/* Prev Next Month */
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  position: absolute;
+  top: -2px;
+  padding: 5px;
+  cursor: pointer;
+}
+.ui-datepicker-prev {
+  left: 0;
+  padding-left: 0;
+}
+.ui-datepicker-next {
+  right: 0;
+  padding-right: 0;
+}
+.ui-datepicker-prev span,
+.ui-datepicker-next span {
+  display: block;
+  width: 5px;
+  height: 10px;
+  text-indent: -9999px;
+  background-image: url(img/arrows.png);
+}
+.ui-datepicker-prev span {
+  background-position: 0px 0px;
+}
+.ui-datepicker-next span {
+  background-position: -5px 0px;
+}
+.ui-datepicker-prev-hover span {
+  background-position: 0px -10px;
+}
+.ui-datepicker-next-hover span {
+  background-position: -5px -10px;
+}
+/* Calendar "Days" */
+.ui-datepicker-calendar th {
+  text-align: center;
+  font-weight: normal;
+  color: #a8a8a8;
+}
+.ui-datepicker-calendar td {
+  padding: 12 14px;
+  text-align: center;
+  line-height: 26x;
+}
+.ui-datepicker-calendar .ui-state-default {
+  display: block;
+  outline: none;
+  text-decoration: none;
+  color: #a8a8a8;
+  border: 1px solid transparent;
+}
+/* Day Active State*/
+.ui-datepicker-calendar .ui-state-active {
+  color: #6a9113;
+  border-color: #6a9113;
+}
+/* Other Months Days*/
+.ui-datepicker-other-month .ui-state-default {
+  color: #565656;
+}
+.ui-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+table.ui-datepicker-calendar td {
+  margin: 5px;
+  padding: 10px;
+}
+.ui-datepicker-calendar {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1em;
+}
+#calendar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: url(img/bg.png) repeat;
+}
+#calendar div {
+  border-radius: 10px;
+}
+#wrapper {
+  padding: 50px 0 0 325px;
+}
+#calendar {
+  border-radius: 10px;
+}
+.spacingMeetingInfo {
+  margin-bottom: 10px;
+  border-top: 1px solid black;
+}
+.presetMeetingInfo {
+  padding-bottom: 10px;
+}
+label.spacingMeetingInfo {
+  border-top: 1px solid red;
+  min-height: 42px;
+  font-size: 1.5em;
+  margin-top: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

@@ -1,0 +1,24 @@
+* {
+  padding: 0px;
+  vertical-align: top;
+  outline: 1px dotted red;
+}
+body {
+  margin: 0 auto;
+  /*width: 980px;*/
+
+  min-height: 500px;
+}
+body div.container-fluid {
+  max-width: 970px;
+}
+body div.header {
+  height: 75px;
+}
+body div.header nav ul {
+  margin-top: 20px;
+  text-align: center;
+}
+body div.header nav ul li {
+  display: inline;
+}

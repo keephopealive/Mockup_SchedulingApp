@@ -1,0 +1,157 @@
+<html>
+<head>
+    <link rel="stylesheet" href="js/jquery-ui-datepicker.min.js">
+    <link rel="stylesheet" href="scheduler.css.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+    
+    <title>EDIT Scheduler</title>
+</head>
+<body>
+    <div class="container-fluid">
+       
+       <div class="row header"> <!-- Header Row -->
+            <div class="col-md-6 col-xs-12">
+                <h1>EDIT SchedulingApp.com</h1>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <nav>
+                    <ul>
+                        <li><a href="main.html" class="btn btn-primary">(temp) Main</a></li>
+                        <li><a href="scheduler.html" class="btn btn-danger">(temp) Scheduler</a></li>
+                        <li><a href="editScheduler.html" class="btn btn-danger">(temp) Edit Scheduler</a></li>                    
+                    </ul>
+                </nav>
+            </div>
+        </div>
+       
+        <div class="row aboutYou"> <!-- About You Row -->
+           <div class="col-xs-12">
+               <h2>Information about You</h2>
+               <form>
+                    <div class="form-group">
+                        <label for="inputFirstName">First Name</label>
+                        <input type="email" class="form-control" id="inputFirstName" placeholder="Enter first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName">Last Name</label>
+                        <input type="email" class="form-control" id="inputLastName" placeholder="Enter last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPhone">Phone Number</label>
+                        <input type="email" class="form-control" id="inputPhone" placeholder="Enter phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="skypeID">Skype ID</label>
+                        <input type="text" class="form-control" id="skypeID" placeholder="Enter Skype ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="addNote">Add Note (optional)</label>
+                        <input type="text" class="form-control" id="addNote" placeholder="Enter Note">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+           </div>
+        </div>
+        
+        <div class="row meetingInformation"> <!-- Meeting Info -->
+            <div class="col-xs-12">
+               
+                <div class="row">
+                    
+                    <div class="col-xs-12">
+                        <h2>Meeting Information</h2>
+                    </div>
+                        
+                </div>
+                <div class="row">
+                   
+                    <div class="col-xs-3 labels">
+                        <label class="spacingMeetingInfo" for="inputMeetingNote">Meeting Title</label>
+                        <label class="spacingMeetingInfo" for="inputMeetingLength">Meeting Length</label>
+                        <label class="spacingMeetingInfo" for=""> </label>
+                        <label class="spacingMeetingInfo" for="inputDate" class="">Date</label>            
+                        <label class="spacingMeetingInfo" for="inputDate" class="dateTime">Time</label>            
+                    </div>
+
+                    <div class="col-xs-9 inputs">
+                       <div class="row presetMeetingInfo">
+                           <div class="col-xs-12">
+                                <input type="text" class="form-control spacingMeetingInfo" id="inputMeetingNote" value="Skype Interview with [ Elon Musk ] @ 6:00 AM" readonly>
+                                <input type="number" class="form-control spacingMeetingInfo" id="inputMeetingLength" value="30" readonly>
+                                <a href="" class="btn btn-primary spacingMeetingInfo">Find Next Available Date</a>
+                            </div>
+                       </div>
+                       <div class="row">
+                            <div class="col-xs-6 dateTime">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="date" class="form-control inputDate spacingMeetingInfo" id="inputDate">
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <ul>
+                                            <li><label for="option1"><input type="radio" id="option1" name="dateTimeChoice"> 12:00OPM-12:30PM PST</label></li>
+                                            <li><label for="option2"><input type="radio" id="option2" name="dateTimeChoice"> 3:00OPM-3:30PM PST</label></li>
+    <!--                                        <li><label for="option3"><input type="radio" id="option3" name="dateTimeChoice"> 3:00OPM-3:30PM PST</label></li>-->
+    <!--                                        <li><label for="option4"><input type="radio" id="option4" name="dateTimeChoice"> 3:00OPM-3:30PM PST</label></li>-->
+    <!--                                        <li><label for="option5"><input type="radio" id="option5" name="dateTimeChoice"> 3:00OPM-3:30PM PST</label></li>-->
+    <!--                                        <li><label for="option6"><input type="radio" id="option6" name="dateTimeChoice"> 3:00OPM-3:30PM PST</label></li>-->
+    <!--                                        <li><label for="option7"><input type="radio" id="option7" name="dateTimeChoice"> 3:00OPM-3:30PM PST</label></li>-->
+                                        </ul>
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="col-xs-6 ">
+                                <div class="" id="calendar"></div>
+                            </div>
+                        </div>
+<!-- CALENDAR -->
+                        
+                    </div>
+                    
+                </div>
+                <div class="row">
+                   
+                    <div class="col-xs-3 labels">
+                        <label for="">Email Address:</label>
+                    </div>
+                    <div class="col-xs-9 inputs">
+                        <input type="email" placeholder="Enter email" class="form-control">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                   
+                    <div class="col-xs-12 actions">
+                        <button class="btn btn-success">Save and Set Appointment</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <!-- END Meeting Info -->
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/jquery-ui-datepicker.min.js"></script>
+    <script>
+    $('#calendar').datepicker({
+        inline: true,
+        firstDay: 1,
+        showOtherMonths: true,
+        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    });
+//    $('a.myNumbersWin').each(function(i, obj){
+//        console.log(obj);
+//    });
+    $(document).on('click', 'a.myNumbersWin', function(a){
+        console.log(a.currentTarget.innerHTML);
+//        console.log('clicked on' $(this).val());
+        console.log($('span.myMonthClass')[0].innerHTML);
+    });
+    </script>
+</body>
+</html>

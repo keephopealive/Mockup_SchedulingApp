@@ -1,0 +1,104 @@
+*{
+	
+	padding: 0px;
+	vertical-align: top;
+	outline: 1px dotted red;
+}
+
+body{
+	margin: 0 auto;
+	/*width: 980px;*/
+	min-height: 500px;
+	
+	div.container-fluid{
+		max-width: 970px;
+	}
+
+	div.header{
+		height: 75px;
+		nav{
+			 ul {
+				margin-top: 20px;
+				text-align: center;
+				li {
+					display: inline;
+				}
+			}
+		}
+	}
+
+	div.aboutYou{
+		
+		label{
+			font-size: 1.2em;
+		}
+	}
+
+	div.meetingInformation{
+
+		div.labels {
+			font-size: 1.3em;
+
+			label{
+				margin: 0px;
+				display: block;
+				height: 35px;
+				text-align: right;
+			}
+			label.inputCalendar{
+				height: 150px;
+			}
+			label.dateTime{
+				height: 150px;
+			}
+		}
+		div.inputs {
+			
+			input, a, select{
+				font-size: 1.3em;
+				display: block;
+				height: 35px;
+			}
+			input.inputDate{
+			}
+			div.dateTime{
+				min-height: 150px;
+				select{
+					width: 100%;
+				}
+				ul {
+					list-style-type: none;
+					li{
+						label{
+							width: 100%;
+							font-size: 1.7em;
+							input{
+								display: inline-block;
+							}
+
+						}
+					}
+				}
+				span{
+					height: 35px;
+				}
+			}
+			div.calendar{
+
+			}
+		}
+
+		div.actions {
+			margin-top: 15px;
+			text-align: center;
+			button {
+				width: 250px;
+				margin: 10px auto;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+		}
+	}
+	
+}
+

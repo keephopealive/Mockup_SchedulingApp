@@ -1,0 +1,22 @@
+* {
+  padding: 0px;
+  vertical-align: top;
+  outline: 1px dotted red;
+}
+body {
+  margin: 0 auto;
+  /*width: 980px;*/
+
+  min-height: 500px;
+}
+body div.container-fluid {
+  max-width: 970px;
+}
+body div.container-fluid div.outline ol {
+  margin-top: 50px;
+}
+body div.container-fluid div.outline ol li {
+  margin-top: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
