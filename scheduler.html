@@ -9,14 +9,6 @@
 </head>
 <body>
     <div class="container-fluid">
-       <div class="row">
-           <div class="col-xs-6">
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus assumenda aperiam, beatae repellendus delectus reprehenderit inventore id quaerat autem quae laborum voluptas nihil, reiciendis fugiat dolore architecto cum numquam.
-           </div>
-           <div class="col-xs-6">
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora id ratione voluptatem cupiditate, quos vel et, repudiandae eius, aliquam reiciendis quis tenetur quod consequatur modi temporibus optio. Unde, harum, vel.
-           </div>
-       </div>
        <div class="row header"> <!-- Header Row -->
             <div class="col-md-6 col-xs-12">
                 <h1>SchedulingApp.com</h1>
@@ -200,6 +192,7 @@
         
      // [ BTN - First Available Date ]
     $(document).on('click', '#jqueryFirstAvailableDate', function(){
+        $("[mynum=16]").trigger("click");
         $('#timeOptions').html(""+                
 "<ul>"+
     "<li><label for='option1' ><input type='radio' id='option1' class='timeOptions' name='dateTimeChoice' value='12:00PM-12:30PM PST' > 12:00OPM-12:30PM PST</label></li>"+
@@ -211,9 +204,8 @@
     "<li><label for='option7'><input type='radio' id='option7' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST' > 3:00OPM-3:30PM PST</label></li>"+
 "</ul>");
         // auto selects earliest appointment
-        $('#option1').attr('checked', 'checked');
+        $('#option1').attr('checked', 'checked').trigger('click');
         // auto clicks today's date on CALENDAR
-        $("[mynum=15]").trigger("click");
         // auto sets today's date on DATE INPUT
         var now = new Date();
         var day = ("0" + now.getDate()).slice(-2);
@@ -236,6 +228,10 @@
         "");
     }
     $(document).on('change', '.aboutYouInputs, div.ui-datepicker, #inputDate', function(){
+        if(true){
+            console.log(this);
+            $(this).attr("aria-describedby", "inputSuccess2Status");
+        }
        retrieveInfo();
     });
     $(document).on('click', 'a.myNumbersWin,', function(){
