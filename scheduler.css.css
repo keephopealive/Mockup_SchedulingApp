@@ -56,6 +56,12 @@ body div.meetingInformation div.inputs select {
 body div.meetingInformation div.inputs div.dateTime {
   min-height: 150px;
 }
+body div.meetingInformation div.inputs div.dateTime div.timeOptions {
+  min-height: 100px;
+  max-height: 330px;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
 body div.meetingInformation div.inputs div.dateTime select {
   width: 100%;
 }
