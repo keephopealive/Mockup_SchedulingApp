@@ -41,11 +41,13 @@
     <input type="email" class="form-control aboutYouInputs last_name_input" id="inputLastName" placeholder="Enter last name" value="Johnson">
     <span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span>
 </div>
+<!--
 <div class="form-group has-success has-feedback">
     <label for="inputEmail">Email</label>
     <input type="email" class="form-control aboutYouInputs" id="inputEmail" placeholder="Enter email" value="james@email.com">
     <span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span>
 </div>
+-->
 <div class="form-group has-success has-feedback">
     <label for="inputPhone">Phone Number</label>
     <input type="email" class="form-control aboutYouInputs" id="inputPhone" placeholder="Enter phone number" value="555-555-5555">
@@ -123,18 +125,18 @@
                     </div>
                     
                 </div>
-                <div class="row">
+                <div class="row confirmEdits">
                     <hr>
                     <h2>Confirm Identify & Changes</h2>
                     <p>For confirmation, please enter you email address below:</p>
-                    <div class="col-xs-3 labels">
-                        <label for="">Email Address:</label>
-                    </div>
-                    <div class="col-xs-9 inputs">
-                        <input type="email" placeholder="Enter email" class="form-control">
+                    
+                    <div class="form-group has-feedback has-warning">
+                        <input type="email" class="form-control aboutYouInputs" id="inputConfirmEmail" placeholder="Enter your email for confirmation">
+                        <span class='glyphicon glyphicon-warning-sign form-control-feedback' aria-hidden='true'></span>
                     </div>
                     
                 </div>
+                        
                 <div class="row">
                    
                     <div class="col-xs-12 actions">
@@ -253,10 +255,20 @@
             $(this).parent().addClass("has-warning");
             $(this).siblings("span").remove();
             $(this).parent().append("<span class='glyphicon glyphicon-warning-sign form-control-feedback' aria-hidden='true'></span>");
-
         }
        retrieveInfo();
     });
+//     <div class="col-xs-9 inputs">
+//        <input type="email" placeholder="Enter email" class="form-control" id="confirmEmail">
+//    </div>
+
+    
+//    <div class="form-group has-error has-feedback">
+//      <label class="control-label" for="inputError2">Input with error</label>
+//      <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+//      <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+//      <span id="inputError2Status" class="sr-only">(error)</span>
+//    </div>
     $(document).on('change', '.aboutYouInputs, div.ui-datepicker, #inputDate', function(){
         if(true){
             console.log(this);
