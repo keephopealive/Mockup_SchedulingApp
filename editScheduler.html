@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
     <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <title>Scheduler</title>
 </head>
 <body>
@@ -125,24 +126,28 @@
                     </div>
                     
                 </div>
+                <hr>
+               <!--
                 <div class="row confirmEdits">
-                    <hr>
+                    Button trigger modal 
+                    
                     <h2>Confirm Identify & Changes</h2>
                     <p>For confirmation, please enter you email address below:</p>
                     
-                    <div class="form-group has-feedback has-warning">
+                    <div class="form-group has-feedback has-warning-sign">
                         <input type="email" class="form-control aboutYouInputs" id="inputConfirmEmail" placeholder="Enter your email for confirmation">
                         <span class='glyphicon glyphicon-warning-sign form-control-feedback' aria-hidden='true'></span>
                     </div>
                     
                 </div>
+-->
                         
                 <div class="row">
                    
                     <div class="col-xs-12 actions">
-                        <button class="btn btn-danger">Cancel Appointment</button>
-                        <button class="btn btn-default">Keep As it Was</button>
-                        <button class="btn btn-success oneBtn">Save and Update Appointment</button>   
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#cancelAppointmentModal">Cancel Appointment</button>
+                        <a href="index.html"><button class="btn btn-default">Keep As It Was</button></a>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#updateModal">Save and Update Appointment</button>
                     </div>
                     
                 </div>
@@ -154,8 +159,68 @@
             </div>
         </div>
 </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="js/jquery-ui-datepicker.min.js"></script>
+
+   
+
+
+<!-- MODALS SECTION -->
+
+<!-- CANCEL APPOINTMENT -->
+<div class="modal fade" id="cancelAppointmentModal" tabindex="-1" role="dialog" aria-labelledby="cancelAppointmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="cancelAppointmentModalLabel">Confirm Appointment Cancellation</h2>
+      </div>
+      <div class="modal-body">
+        <p>For confirmation, please enter you email address below:</p>
+        <div class="form-group has-feedback has-warning-sign">
+                <input type="email" class="form-control aboutYouInputs" id="inputConfirmEmail" placeholder="Enter your email for confirmation">
+            <span class='glyphicon glyphicon-warning-sign form-control-feedback' aria-hidden='true'></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Cancel Appointment</button>
+      </div>
+    </div>
+  </div>
+</div>
+     
+
+<!-- SAVE AND UPDATE APPOINTMENT -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="updateModalLabel">Update Appointment</h2>
+      </div>
+      <div class="modal-body">
+      <p>Please review your new appointment date and time.</p>
+       <h4 class="appointmentDateTimeModal"></h4>
+       <p>For confirmation, please enter you email address below:</p>
+        <div class="form-group has-feedback has-warning-sign">
+                <input type="email" class="form-control aboutYouInputs" id="inputConfirmEmail" placeholder="Enter your email for confirmation">
+            <span class='glyphicon glyphicon-warning-sign form-control-feedback' aria-hidden='true'></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+      
+<!-- END MODALS SECTION -->   
+        
+        
+         
+               
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="js/jquery-ui-datepicker.min.js"></script>
 <script>
     $('#calendar').datepicker({
         inline: true,
@@ -180,7 +245,7 @@
             $('#timeOptions').html(""+
                 "<ul>"+
 "<li><label for='option1'><input type='radio' id='option1' class='timeOptions' name='dateTimeChoice' value='4:00PM-4:30PM PST'> 4:00PM-4:30PM PST</label></li>"+
-"<li><label for='option2'><input type='radio' id='option2' class='timeOptions' name='dateTimeChoice' value='5:30PM-6:00PM PST'> 4:30PM-5:00PM PST</label></li>"+
+"<li><label for='option2'><input type='radio' id='option2' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST'> 4:30PM-5:00PM PST</label></li>"+
                 "</ul>");
         }
         var now = new Date();
@@ -243,7 +308,7 @@
            "@ " + tempTimeFrame + " " +$("#inputDate").val()+
         "");
     }
-    $(document).on('change', '.aboutYouInputs, div.ui-datepicker, #inputDate', function(){
+    $(document).on('change', '.aboutYouInputs, div.ui-datepicker', function(){
         if($(this).val().length > 0){
             $(this).attr("aria-describedby", "inputSuccess2Status");
             $(this).parent().removeClass("has-warning");
@@ -291,6 +356,10 @@
         $('input#option1.timeOptions').trigger("click");
         $("input.timeOptions:checked").trigger("click");
         return false;
+    });
+    
+    $(document).on('click', 'div.actions', function(){
+        $("h4.appointmentDateTimeModal").html($("input#inputMeetingNote").val());
     });
 </script>
 </body>
