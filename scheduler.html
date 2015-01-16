@@ -30,29 +30,30 @@
            <div class="col-xs-12">
                <h2>About You</h2>
                <form>
-<div class="form-group">
+<div class="form-group has-feedback">
     <label for="inputFirstName">First Name</label>
     <input type="email" class="form-control aboutYouInputs first_name_input" id="inputFirstName" placeholder="Enter first name">
 </div>
-<div class="form-group">
+
+<div class="form-group has-feedback">
     <label for="inputLastName">Last Name</label>
     <input type="email" class="form-control aboutYouInputs last_name_input" id="inputLastName" placeholder="Enter last name">
 </div>
-<div class="form-group">
+<div class="form-group has-feedback">
     <label for="inputEmail">Email</label>
     <input type="email" class="form-control aboutYouInputs" id="inputEmail" placeholder="Enter email">
 </div>
-<div class="form-group">
+<div class="form-group has-feedback">
     <label for="inputPhone">Phone Number</label>
     <input type="email" class="form-control aboutYouInputs" id="inputPhone" placeholder="Enter phone number">
 </div>
-<div class="form-group">
+<div class="form-group has-feedback">
     <label for="skypeID">Skype ID</label>
     <input type="text" class="form-control aboutYouInputs" id="skypeID" placeholder="Enter Skype ID">
 </div>
-<div class="form-group">
+<div class="form-group has-feedback">
     <label for="addNote">Add Note (optional)</label>
-    <input type="text" class="form-control aboutYouInputs" id="addNote" placeholder="Enter Note">
+    <input type="text" class="form-control" id="addNote" placeholder="Enter Note">
 </div>
                 </form>
                 <br>
@@ -195,13 +196,16 @@
         $("[mynum=16]").trigger("click");
         $('#timeOptions').html(""+                
 "<ul>"+
-    "<li><label for='option1' ><input type='radio' id='option1' class='timeOptions' name='dateTimeChoice' value='12:00PM-12:30PM PST' > 12:00OPM-12:30PM PST</label></li>"+
-    "<li><label for='option2'><input type='radio' id='option2' class='timeOptions' name='dateTimeChoice' value='3:00PM-3:30PM PST' > 3:00OPM-3:30PM PST</label></li>"+
-    "<li><label for='option3'><input type='radio' id='option3' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST' > 3:00OPM-3:30PM PST</label></li>"+
-    "<li><label for='option4'><input type='radio' id='option4' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST' > 3:00OPM-3:30PM PST</label></li>"+
-    "<li><label for='option5'><input type='radio' id='option5' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST' > 3:00OPM-3:30PM PST</label></li>"+
-    "<li><label for='option6'><input type='radio' id='option6' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST' > 3:00OPM-3:30PM PST</label></li>"+
-    "<li><label for='option7'><input type='radio' id='option7' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST' > 3:00OPM-3:30PM PST</label></li>"+
+    "<li><label for='option1' ><input type='radio' id='option1' class='timeOptions' name='dateTimeChoice' value='12:00PM-12:30PM PST' > 12:00PM-12:30PM PST</label></li>"+
+    "<li><label for='option2'><input type='radio' id='option2' class='timeOptions' name='dateTimeChoice' value='2:00PM-2:30PM PST' > 2:00OPM-2:30PM PST</label></li>"+
+    "<li><label for='option3'><input type='radio' id='option3' class='timeOptions' name='dateTimeChoice' value='3:30PM-4:00PM PST' > 3:30PM-4:00PM PST</label></li>"+
+    "<li><label for='option4'><input type='radio' id='option4' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST' > 4:00PM-4:30PM PST</label></li>"+
+    "<li><label for='option5'><input type='radio' id='option5' class='timeOptions' name='dateTimeChoice' value='5:00PM-5:30PM PST' > 5:00PM-5:30PM PST</label></li>"+
+    "<li><label for='option6' ><input type='radio' id='option6' class='timeOptions' name='dateTimeChoice' value='12:00PM-12:30PM PST' > 12:00OPM-12:30PM PST</label></li>"+
+    "<li><label for='option7'><input type='radio' id='option7' class='timeOptions' name='dateTimeChoice' value='2:00PM-2:30PM PST' > 2:00OPM-2:30PM PST</label></li>"+
+    "<li><label for='option8'><input type='radio' id='option8' class='timeOptions' name='dateTimeChoice' value='3:30PM-4:00PM PST' > 3:30PM-4:00PM PST</label></li>"+
+    "<li><label for='option9'><input type='radio' id='option9' class='timeOptions' name='dateTimeChoice' value='4:30PM-5:00PM PST' > 4:00PM-4:30PM PST</label></li>"+
+    "<li><label for='option10'><input type='radio' id='option10' class='timeOptions' name='dateTimeChoice' value='5:00PM-5:30PM PST' > 5:00PM-5:30PM PST</label></li>"+
 "</ul>");
         // auto selects earliest appointment
         $('#option1').attr('checked', 'checked').trigger('click');
@@ -228,9 +232,18 @@
         "");
     }
     $(document).on('change', '.aboutYouInputs, div.ui-datepicker, #inputDate', function(){
-        if(true){
-            console.log(this);
+        if($(this).val().length > 0){
             $(this).attr("aria-describedby", "inputSuccess2Status");
+            $(this).parent().removeClass("has-warning");
+            $(this).parent().addClass("has-success");
+            $(this).siblings("span").remove();
+            $(this).parent().append("<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span>");
+        }else{
+            $(this).parent().removeClass("has-success");
+            $(this).parent().addClass("has-warning");
+            $(this).siblings("span").remove();
+            $(this).parent().append("<span class='glyphicon glyphicon-warning-sign form-control-feedback' aria-hidden='true'></span>");
+
         }
        retrieveInfo();
     });
@@ -241,7 +254,6 @@
         console.log(this);
        retrieveInfo();
     });
-    
     
 </script>
 </body>
